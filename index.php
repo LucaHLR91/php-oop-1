@@ -24,8 +24,29 @@ metodi d'istanza che abbiamo visto stamattina e create un file index.php in cui:
             $this->time = $_time;
             $this->language = $_language;
         }
+        // DEFINISCO DEI METODI SETTER E GETTER PER POTER MODIFICARE IN FUTURO LA VARIABILE TITLE SE DOVESSE ESSERE NECESSARIO, DOVREI FARLO PER TUTTE LE VARIABILI PRESENTI NELLA MIA CLASSE
+        function setTitle($_title) {
+            $this->title = $_title;
+        }
+
+        function getTitle() {
+            return $this->title;
+        }
+
+        function getInfo() {
+            return 'IL FILM SCELTO:' . '</br>' . $this->title . ' ' . '-' . ' ' .  $this->subtitle; 
+        }
     }
 
     $movie1 = new Movie('Lord Of The Rings', 'The Return Of The King', 'Peter Jackson', 'Fantasy', 178, 'English');
     $movie2 = new Movie('Lord Of The Rings', 'The Two Towers', 'Peter Jackson', 'Fantasy', 178, 'English');
+
+    var_dump($movie1);
+    var_dump($movie2);
+
+    // RICHIAMO IL METODO GET INFO INSERITO NELLA CLASSE
+    $info = $movie1->getInfo();
+    echo $info;
+    
+
 ?>
